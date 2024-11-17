@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 2</title>
+        <style>
+            body {
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .calculator {
+                background-color: #f5f5f5;
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+
+            .input-group {
+                margin-bottom: 10px;
+            }
+
+            input {
+                padding: 5px;
+                margin-right: 10px;
+            }
+
+            button {
+                padding: 5px 15px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            .result {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Week 2 - Task 2.2P</h1>
+
+        <div class="calculator">
+            <h2>Addition (GET API)</h2>
+            <div class="input-group">
+                <input type="number" id="addNum1" placeholder="First number">
+                <input type="number" id="addNum2" placeholder="Second number">
+                <button onclick="add()">Add</button>
+            </div>
+            <div class="result" id="addResult"></div>
+        </div>
+
+        <div class="calculator">
+            <h2>Multiplication (POST API)</h2>
+            <div class="input-group">
+                <input type="number" id="mulNum1" placeholder="First number">
+                <input type="number" id="mulNum2" placeholder="Second number">
+                <button onclick="multiply()">Multiply</button>
+            </div>
+            <div class="result" id="mulResult"></div>
+        </div>
+
+        <script>
+            async function add() {
+                const num1 = document.getElementById('addNum1').value;
+                const num2 = document.getElementById('addNum2').value;
+
+                try {
+                    const response = await fetch(`/add?a=${num1}&b=${num2}`);
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        document.getElementById('addResult').textContent = `Result: ${data.result}`;
+                    } else {
+                        document.getElementById('addResult').textContent = `Error: ${data.error}`;
+                    }
+                } catch (error) {
+                    document.getElementById('addResult').textContent = 'Error: Something went wrong';
+                }
+            }
+
+            async function multiply() {
+                const num1 = parseFloat(document.getElementById('mulNum1').value);
+                const num2 = parseFloat(document.getElementById('mulNum2').value);
+
+                try {
+                    const response = await fetch('/multiply', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ a: num1, b: num2 })
+                    });
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        document.getElementById('mulResult').textContent = `Result: ${data.result}`;
+                    } else {
+                        document.getElementById('mulResult').textContent = `Error: ${data.error}`;
+                    }
+                } catch (error) {
+                    document.getElementById('mulResult').textContent = 'Error: Something went wrong';
+                }
+            }
+        </script>
+    </body>
+</html>
