@@ -1,9 +1,9 @@
-Deakin University
-SIT725 - Applied Software Engineering
-Student name: Hue Minh Nguyen (Milly Nguyen)
-Student number: 220466717
-Target grade: High Distinction
-OnTrack Task 2.2P
+- Deakin University
+- SIT725 - Applied Software Engineering
+- Student name: Hue Minh Nguyen (Milly Nguyen)
+- Student number: 220466717
+- Target grade: High Distinction
+- OnTrack Task 2.2P
 
 
 # Calculator API
@@ -19,6 +19,4 @@ A simple calculator API calculates basic arithmetic operations.
 ## Available Endpoints
 
 - GET `/add?a=<number>&b=<number>` - Adds two numbers
-- GET `/subtract?a=<number>&b=<number>` - Subtracts b from a
-- GET `/multiply?a=<number>&b=<number>` - Multiplies two numbers
-- GET `/divide?a=<number>&b=<number>` - Divides a by b
+- POST `/multiply` - Multiplies two numbers
