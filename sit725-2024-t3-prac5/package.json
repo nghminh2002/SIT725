@@ -1,0 +1,17 @@
+{
+  "name": "@millynguyen/sit725-2024-t3-prac5",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Milly Nguyen",
+  "license": "ISC",
+  "description": "SIT725 Week 5 Prac",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3"
+  }
+}
