@@ -1,27 +1,23 @@
-const Blog = require("../models/blog-model");
+const BlogService = require("../services/blog-service");
 
 class BlogController {
   async getAllBlogs(req, res) {
     try {
-      const allBlogs = await Blog.find();
+      const allBlogs = await BlogService.findAllBlogs();
       res.json(allBlogs);
     } catch (error) {
-      res.status(500).json({ error: "Error fetching blogs" });
+      res.status(500).json({ error: error.message });
     }
   }
 
   async createBlog(req, res) {
     try {
       const { title, content } = req.body;
-      const newBlog = new Blog({
-        title,
-        content,
-        date: new Date().toLocaleDateString(),
-      });
-      const savedBlog = await newBlog.save();
+      const blogData = { title, content };
+      const savedBlog = await BlogService.createNewBlog(blogData);
       res.json(savedBlog);
     } catch (error) {
-      res.status(500).json({ error: "Error creating blog" });
+      res.status(500).json({ error: error.message });
     }
   }
 }
