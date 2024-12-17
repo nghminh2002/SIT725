@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIT725 - Week 6 Prac</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <nav class="nav-extended purple darken-1">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Hue Minh Nguyen's Blog</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="#modal-lucky" class="modal-trigger">Lucky Number</a></li>
+                    <li><a href="#modal-about" class="modal-trigger">About</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 m8 offset-m2">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Create New Post</span>
+                                <div class="input-field">
+                                    <input type="text" id="blogTitle">
+                                    <label for="blogTitle">Blog Title</label>
+                                </div>
+                                <div class="input-field">
+                                    <textarea id="blogContent" class="materialize-textarea"></textarea>
+                                    <label for="blogContent">Blog Content</label>
+                                </div>
+                                <button class="btn waves-effect waves-light purple darken-1" onclick="createBlog()">
+                                    Post Blog
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h4 class="center-align">All Posts</h4>
+                <div id="blogContainer" class="row"></div>
+            </div>
+        </div>
+
+        <div id="modal-lucky" class="modal">
+            <div class="modal-content">
+                <h4>Today's Lucky Number</h4>
+                <p>Click the button to get your lucky number!</p>
+                <h3 id="luckyNumber" class="center-align"></h3>
+                <button class="btn waves-effect waves-light purple" onclick="generateLuckyNumber()">
+                    Generate Number
+                    <i class="material-icons right">casino</i>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+        <div id="modal-about" class="modal">
+            <div class="modal-content">
+                <h4>About This Blog</h4>
+                <p>Welcome to my personal blog! This is a space where I share my thoughts and experiences.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./js/scripts.js"></script>
+    </body>
+</html>

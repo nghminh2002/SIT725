@@ -1,0 +1,21 @@
+{
+  "name": "@millynguyen/sit725-2024-t3-prac6",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha test/**/*.test.js --reporter spec",
+    "start": "node server.js"
+  },
+  "author": "Milly Nguyen",
+  "license": "ISC",
+  "description": "SIT725 Week 6 Prac",
+  "dependencies": {
+    "chai": "^5.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mocha": "^11.0.1",
+    "mongoose": "^8.8.3",
+    "request": "^2.88.2"
+  }
+}
