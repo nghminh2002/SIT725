@@ -1,12 +1,17 @@
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./config/db-config");
-const apiRoutes = require("./routes/index");
+import express from "express";
+import cors from "cors";
+import { connectDB } from "./config/db-config.js";
+import apiRoutes from "./routes/index.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
 app.use(cors());
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

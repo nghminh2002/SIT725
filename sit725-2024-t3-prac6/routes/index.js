@@ -1,10 +1,10 @@
-const express = require("express");
-const blogRoutes = require("./blog-route");
-const luckyNumberRoutes = require("./lucky-number-route");
+import express from "express";
+import blogRoutes from "./blog-route.js";
+import luckyNumberRoutes from "./lucky-number-route.js";
 
 const router = express.Router();
 
 router.use("/blogs", blogRoutes);
 router.use("/lucky-number", luckyNumberRoutes);
 
-module.exports = router;
+export default router;

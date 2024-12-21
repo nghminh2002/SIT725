@@ -1,7 +1,7 @@
-const express = require("express");
-const router = express.Router();
-const luckyNumberController = require("../controllers/lucky-number-controller");
+import express from "express";
+import luckyNumberController from "../controllers/lucky-number-controller.js";
 
+const router = express.Router();
 router.get("/", luckyNumberController.getLuckyNumber);
 
-module.exports = router;
+export default router;
