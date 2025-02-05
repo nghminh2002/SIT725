@@ -1,0 +1,237 @@
+:root {
+  --font-family: "Helvetica", sans-serif;
+
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --white: #fff;
+  --info: #17a2b8;
+  --dark: #343a40;
+  --dark-blue: #4c6ef5;
+  --text-muted: #6c757d;
+  --background: #f4f4f4;
+  --light-background: #f9f9f9;
+  --background-gradient: linear-gradient(to left, var(--background), #dcdcdc);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--background-gradient);
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.heading__h2 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.heading__h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 45%;
+  width: 10%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+a {
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--info);
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+a:active {
+  text-decoration: underline var(--primary);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-left::after {
+  left: 0;
+}
+
+.btn {
+  padding: 0 30px;
+  height: auto;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn__primary {
+  background-color: var(--primary);
+}
+
+.btn__secondary {
+  background-color: transparent;
+  border-color: var(--white);
+}
+
+.btn__tertiary {
+  width: 100%;
+  background-color: #343a40;
+  transition: background-color 0.3s;
+}
+
+.btn__tertiary:hover {
+  background-color: #212529;
+}
+
+.btn__tertiary:focus {
+  background-color: rgb(230, 230, 233);
+}
+
+.toast {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  top: 0;
+  animation: move 0.9s ease-out;
+}
+
+.toast__success {
+  background-color: var(--success);
+}
+
+.toast__error {
+  background-color: var(--danger);
+}
+
+#error {
+  color: var(--danger)
+}
+
+@keyframes move {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+/* loader content */
+.loader-content {
+  height: 100vh;
+  z-index: 99;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+}
+
+.loader {
+  width: 90px;
+  height: 14px;
+  box-shadow: 0 3px 0 var(--primary);
+  position: relative;
+  clip-path: inset(-40px 0 -5px);
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: auto calc(50% - 17px) 0;
+  height: 50px;
+  --g: no-repeat linear-gradient(var(--primary) 0 0);
+  background: var(--g), var(--g), var(--g), var(--g);
+  background-size: 16px 14px;
+  animation: l7-1 2s infinite linear, l7-2 2s infinite linear;
+}
+@keyframes l7-1 {
+  0%,
+  100% {
+    background-position: 0 -50px, 100% -50px;
+  }
+  17.5% {
+    background-position: 0 100%, 100% -50px, 0 -50px, 100% -50px;
+  }
+  35% {
+    background-position: 0 100%, 100% 100%, 0 -50px, 100% -50px;
+  }
+  52.5% {
+    background-position: 0 100%, 100% 100%, 0 calc(100% - 16px), 100% -50px;
+  }
+  70%,
+  98% {
+    background-position: 0 100%, 100% 100%, 0 calc(100% - 16px),
+      100% calc(100% - 16px);
+  }
+}
+@keyframes l7-2 {
+  0%,
+  70% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(200%);
+  }
+}
+
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+  .btn{
+    font-size: 10px;
+    padding: 0 16px;
+    line-height: 30px;
+  }
+
+  h2 {
+    font-size: 1.56rem;
+  }
+}

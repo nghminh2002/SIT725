@@ -1,0 +1,144 @@
+.navbar-fixed,
+.navbar-scrolled {
+  height: 9%;
+  transition: background-color 0.5s ease;
+}
+
+.nav {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 15px 0;
+}
+
+.nav.navbar-scrolled {
+  background-color: var(--background);
+}
+
+nav.admin-nav {
+  box-shadow: none;
+}
+
+.nav ul a {
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--info);
+}
+
+.nav .brand-logo {
+  color: var(--info);
+}
+
+#userDropdownButton {
+  font-weight: bold;
+}
+
+/* User info */
+.user-info-popup {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  color: var(--dark);
+  font-size: 14px;
+  background: var(--white);
+  border: 1px solid var(--background);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px 15px 20px;
+  width: 280px;
+  z-index: 1000;
+}
+
+/* title */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  line-height: normal;
+  font-size: 14px;
+}
+
+.popup-header .popup-title {
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.popup-header .logout-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.popup-header .logout-link i {
+  margin-left: 5px;
+  font-size: 10px;
+  line-height: normal;
+  height: auto;
+}
+
+.popup-header .logout-link:hover {
+  color: var(--danger);
+  background-color: var(--white);
+}
+
+/* user info */
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.user-details .profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user-details .user-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details .user-text .user-name {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--dark);
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+.user-details .user-text .user-email {
+  font-size: 12px;
+  color: var(--secondary);
+  margin: 0 0 5px 0;
+}
+
+.user-info-popup.active {
+  display: block;
+}
+
+.cart-count,
+.notification-count {
+  background-color: var(--danger);
+  color: var(--white);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .nav .brand-logo span{
+    display: none;
+  }
+
+  .nav .brand-logo{
+    left: 10%;
+  }
+
+  nav .sidenav-trigger {
+    margin: 0;
+  }
+}

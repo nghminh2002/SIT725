@@ -1,0 +1,66 @@
+<div class="navbar-fixed">
+  <nav class="nav admin-nav">
+    <div class="container nav-wrapper">
+      <a href="#!" class="brand-logo">
+        <img src="/assets/img/icon.png" height="60" alt="ShopSphere Logo" />
+        <span class="brand-logo">ShopSphere</span>
+      </a>
+
+      <ul class="right nav-items">
+        <!-- <li><a href="/homepage">View website</a></li> -->
+        <li><button id="logout" class="btn btn__primary">Logout</button></li>
+        <li>
+          <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="fas fa-solid fa-bars"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidenav" id="slide-out">
+    <div class="profile">
+      <img class="profile__img" src="/assets/img/admin.jpg" />
+      <p class="profile__title">Admin</p>
+    </div>
+
+    <div class="sidenav-title">Dashboard</div>
+    <ul class="sidenav-items">
+      <li class="active">
+        <a
+          href="#"
+          id="manageUser"
+          class="tablinks"
+          onclick="adminNav(event, 'user')"
+        >
+          <i class="fas fa-user-cog"></i> Manage User
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          id="manageProduct"
+          class="tablinks"
+          onclick="adminNav(event, 'product')"
+        >
+          <i class="fas fa-box-open"></i> Manage Product
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          id="viewOrder"
+          class="tablinks"
+          onclick="adminNav(event, 'order')"
+        >
+          <i class="fas fa-shopping-cart"></i> Order
+        </a>
+      </li>
+      <li>
+        <a href="#" class="tablinks" onclick="adminNav(event, 'password')">
+          <i class="fas fa-key"></i> Update Password
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

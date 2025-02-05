@@ -1,0 +1,88 @@
+<%- include('./layout/header') %> <%- include('./partials/navbar') %>
+
+<div class="loader-content">
+  <div class="loader"></div>
+</div>
+
+<div class="container homepage" id="container">
+  <div class="banner">
+    <img class="banner-img" src="/assets/img/banner.png" alt="" />
+  </div>
+
+  <div class="search-container">
+    <div class="search-content">
+      <form id="searchForm" class="search-form">
+        <div class="input-field">
+          <input type="text" id="search" name="search" />
+          <label for="search">Search products</label>
+        </div>
+
+        <div class="input-field">
+          <select id="retailer" name="retailer">
+            <option value="">All Retailers</option>
+            <option value="Amazon">Amazon</option>
+            <option value="Walmart">Walmart</option>
+            <option value="Target">Target</option>
+            <option value="Best Buy">Best Buy</option>
+            <option value="Costco">Costco</option>
+            <option value="ebay">eBay</option>
+            <option value="Newegg">Newegg</option>
+            <option value="Home Depot">Home Depot</option>
+            <option value="Macy's">Macy's</option>
+            <option value="PetSmart">PetSmart</option>
+          </select>
+          <label>Filter by Retailer</label>
+        </div>
+
+        <div class="input-field">
+          <select id="sortBy" name="sortBy">
+            <option value="">Sort By</option>
+            <option value="price">Price</option>
+            <option value="quantity">Quantity</option>
+          </select>
+          <label>Sort By</label>
+        </div>
+
+        <div class="input-field">
+          <select id="order" name="order">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+          <label>Order</label>
+        </div>
+
+        <button class="btn btn__primary" type="submit">
+          <i class="material-icons">Search</i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="newestProductsContainer hide-on-med-and-down">
+    <h2 class="heading__h2">Our Newest Products</h2>
+    <div id="newestProducts" class="newest-products"></div>
+  </div>
+
+  <div class="featuredProductsContainer">
+    <h2 class="heading__h2">Our Featured Products</h2>
+    <div class="row" id="productsContainer"></div>
+  </div>
+
+  <!-- Detail Product Modal -->
+  <div id="detailProductModal" class="modal detailModal">
+    <div class="modal-content detailContainer">
+      <div class="modal-header">
+        <a href="#!" class="modal-close btn waves-effect waves-light red"
+          >Cancel</a
+        >
+      </div>
+      <%- include('./detail') %>
+    </div>
+  </div>
+
+  <div class="row pagination-container">
+    <div class="center-align" id="pagination"></div>
+  </div>
+</div>
+
+<%- include('./layout/footer') %>

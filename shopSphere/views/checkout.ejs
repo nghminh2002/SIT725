@@ -1,0 +1,54 @@
+<%- include('./layout/header') %>
+    <%- include('./partials/navbar') %>
+
+        <div class="container">
+            <h2>Checkout</h2>
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div id="checkoutItems">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <div class="total-amount">
+                    Total Amount: $<span id="totalAmount">0</span>
+                </div>
+            </div>
+            <form id="checkoutForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="cardNumber" type="text" required>
+                        <label for="cardNumber">Card Number</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="expiryDate" type="text" placeholder="MM/YY" required>
+                        <label for="expiryDate">Expiry Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="cvv" type="text" required>
+                        <label for="cvv">CVV</label>
+                    </div>
+                </div>
+                <h4>Shipping Address</h4>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="street" type="text" required>
+                        <label for="street">Street</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="city" type="text" required>
+                        <label for="city">City</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="postalCode" type="text" required>
+                        <label for="postalCode">Postal Code</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="country" type="text" required>
+                        <label for="country">Country</label>
+                    </div>
+                    <div id="error"></div>
+                </div>
+                <button id="test" type="submit" class="btn green">Place Order</button>
+            </form>
+        </div>
+
+ <%- include('./layout/footer') %>
